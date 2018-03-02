@@ -60,6 +60,7 @@ Java_com_opencv_opencvdemo_martin_CutActivity_grabCutFromJNI(JNIEnv *env,
 
   Mat *foreground = new Mat(img->size(), CV_8UC3, Scalar(255, 255, 255));
   img->copyTo(*foreground, firstMask);
+  
 
   return foreground;
 }

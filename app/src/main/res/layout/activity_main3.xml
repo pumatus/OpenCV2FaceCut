@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical">
 
     <Button
         android:id="@+id/btn_cut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="grabCut"
+        android:text="GrabCut"
         />
 
     <ImageView
         android:id="@+id/img_cut"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/test2"/>
+        android:src="@drawable/test1"/>
+
+    <ImageView
+        android:id="@+id/img_face"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/test1" />
 
     <com.opencv.opencvdemo.c1412.FaceView
         android:visibility="gone"

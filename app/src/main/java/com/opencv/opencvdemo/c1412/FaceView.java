@@ -18,6 +18,7 @@ import com.opencv.opencvdemo.R;
 
 /**
  * Created by Pumatus on 2018/2/24.
+ * Under consideration, or priority to use Opencv
  */
 
 public class FaceView extends android.support.v7.widget.AppCompatImageView {
@@ -48,6 +49,7 @@ public class FaceView extends android.support.v7.widget.AppCompatImageView {
 	private void init() {
 		BitmapFactory.Options options = new Options();
 		options.inPreferredConfig = Config.RGB_565;
+		//Put here need to detect the face of the picture
 		faceImage = BitmapFactory.decodeResource(getResources(), R.drawable.test1, options);
 		imageWidth = faceImage.getWidth();
 		imageHeight = faceImage.getHeight();
@@ -64,12 +66,12 @@ public class FaceView extends android.support.v7.widget.AppCompatImageView {
 		mPint.setColor(Color.GREEN);
 		mPint.setStyle(Style.STROKE);
 		mPint.setStrokeWidth(2);
-		//开始画框
+		//Start the picture frame
 		for (int i = 0; i < mFaceFaces; i++) {
 			FaceDetector.Face face = mFaces[i];
 			PointF pointF = new PointF();
 			face.getMidPoint(pointF);
-			//得到人脸中心点和眼间距离参数
+			//Get the center of the face and eye distance parameters
 			myEyesDistance = face.eyesDistance();
 			canvas.drawRect(pointF.x - myEyesDistance, pointF.y - myEyesDistance,
 					pointF.x + myEyesDistance, (float) (pointF.y + myEyesDistance * 1.5), mPint);
